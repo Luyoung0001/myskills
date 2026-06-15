@@ -977,6 +977,7 @@ const elements = {
   syncMeta: document.querySelector("#sync-meta"),
   syncNow: document.querySelector("#sync-now"),
   focusButtons: document.querySelectorAll("[data-focus]"),
+  resultsHead: document.querySelector(".results-head"),
 };
 
 const categoryRules = [
@@ -1489,8 +1490,14 @@ function render() {
 
 function updateFocusState() {
   elements.focusButtons.forEach((button) => {
-    const isNovel = button.dataset.focus === "novel" && state.categories.has("小说");
-    const isRtl = button.dataset.focus === "rtl" && state.categories.has("RTL");
+    const isNovel =
+      button.dataset.focus === "novel" &&
+      state.categories.has("小说") &&
+      state.sources.has("novelWriting");
+    const isRtl =
+      button.dataset.focus === "rtl" &&
+      state.categories.has("RTL") &&
+      state.sources.has("gateflow");
     button.classList.toggle("is-active", isNovel || isRtl);
     button.setAttribute("aria-pressed", String(isNovel || isRtl));
   });
@@ -1520,14 +1527,26 @@ function focusWorkflow(kind) {
   state.installableOnly = false;
   state.sort = "quality";
 
-  if (kind === "novel") state.categories.add("小说");
-  if (kind === "rtl") state.categories.add("RTL");
+  if (kind === "novel") {
+    state.categories.add("小说");
+    ["novelWriting", "storySkills", "creativeWriting"].forEach((source) => {
+      state.sources.add(source);
+    });
+  }
+
+  if (kind === "rtl") {
+    state.categories.add("RTL");
+    ["gateflow", "mindrallyHardware", "xilinxSuite", "chipforge"].forEach((source) => {
+      state.sources.add(source);
+    });
+  }
 
   elements.search.value = "";
   elements.officialOnly.checked = false;
   elements.installableOnly.checked = false;
   elements.sort.value = "quality";
   render();
+  elements.resultsHead.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 elements.search.addEventListener("input", (event) => {

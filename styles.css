@@ -420,12 +420,15 @@ select {
   position: relative;
   overflow: hidden;
   display: grid;
-  gap: 10px;
-  min-height: 112px;
-  padding: 16px;
-  border: 1px solid var(--line);
+  grid-template-columns: 1fr;
+  gap: 7px;
+  min-height: 118px;
+  padding: 16px 18px 16px 20px;
+  border: 1px solid rgba(117, 134, 139, 0.34);
   border-radius: var(--radius);
-  background: #ffffff;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 252, 252, 0.92)),
+    #ffffff;
   color: var(--ink);
   cursor: pointer;
   text-align: left;
@@ -433,31 +436,31 @@ select {
 
 .signal-lane::before {
   position: absolute;
-  inset: 0;
+  inset: 14px auto 14px 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
   content: "";
-  opacity: 0.62;
   pointer-events: none;
 }
 
 .lane-novel::before {
-  background:
-    linear-gradient(90deg, rgba(138, 63, 252, 0.12), transparent 52%),
-    repeating-linear-gradient(90deg, transparent 0 34px, rgba(138, 63, 252, 0.12) 34px 35px);
+  background: var(--novel);
 }
 
 .lane-rtl::before {
-  background:
-    linear-gradient(90deg, rgba(0, 109, 119, 0.14), transparent 52%),
-    repeating-linear-gradient(90deg, transparent 0 24px, rgba(0, 109, 119, 0.16) 24px 25px);
+  background: var(--rtl);
 }
 
 .signal-lane:hover {
+  border-color: rgba(0, 109, 119, 0.38);
+  box-shadow: 0 12px 28px rgba(24, 38, 45, 0.1);
   transform: translateY(-1px);
 }
 
 .signal-lane.is-active {
   border-color: currentColor;
-  box-shadow: inset 0 0 0 1px currentColor;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px currentColor, 0 12px 28px rgba(24, 38, 45, 0.08);
 }
 
 .lane-novel.is-active {
@@ -470,7 +473,8 @@ select {
 
 .lane-label,
 .signal-lane strong,
-.lane-trace {
+.lane-copy,
+.lane-tags {
   position: relative;
   z-index: 1;
 }
@@ -492,28 +496,31 @@ select {
 
 .signal-lane strong {
   max-width: 440px;
-  font-size: 1.18rem;
-  line-height: 1.35;
+  font-size: 1.14rem;
+  font-weight: 820;
+  line-height: 1.25;
 }
 
-.lane-trace {
-  display: block;
-  width: min(280px, 80%);
-  height: 16px;
-  margin-top: auto;
-  background:
-    linear-gradient(90deg, currentColor 0 18px, transparent 18px 28px, currentColor 28px 70px, transparent 70px 82px, currentColor 82px 120px, transparent 120px 132px, currentColor 132px 100%);
-  opacity: 0.34;
+.lane-copy {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
 }
 
-.lane-novel .lane-trace {
-  color: var(--novel);
-  clip-path: polygon(0 40%, 16% 40%, 16% 70%, 38% 70%, 38% 26%, 62% 26%, 62% 56%, 100% 56%, 100% 70%, 0 70%);
-}
-
-.lane-rtl .lane-trace {
-  color: var(--rtl);
-  clip-path: polygon(0 54%, 12% 54%, 12% 20%, 24% 20%, 24% 78%, 38% 78%, 38% 36%, 52% 36%, 52% 64%, 70% 64%, 70% 24%, 84% 24%, 84% 54%, 100% 54%, 100% 70%, 0 70%);
+.lane-tags {
+  align-self: end;
+  justify-self: start;
+  margin-top: 4px;
+  padding: 5px 8px;
+  border: 1px solid rgba(117, 134, 139, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #43515a;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .source-strip {
