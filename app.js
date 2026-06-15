@@ -1429,9 +1429,9 @@ async function syncCatalogs() {
     mergeSkills(remoteSkills);
 
     const failed = settled.filter((result) => result.status === "rejected").length;
-    elements.syncStatus.textContent = failed ? "部分目录同步完成" : "公开技能目录已同步";
+    elements.syncStatus.textContent = failed ? "可用目录已同步" : "公开技能目录已同步";
     elements.syncMeta.textContent = `已合并 ${remoteSkills.length} 条远程技能，去重后共 ${skills.length} 条。${
-      failed ? `有 ${failed} 个来源暂时不可用。` : ""
+      failed ? `${failed} 个来源暂时不可用，稍后可重新同步。` : ""
     }`;
     render();
   } catch (error) {
@@ -1483,7 +1483,17 @@ function render() {
   renderActiveFilters();
   renderCards(items);
   updateStats(items);
+  updateFocusState();
   elements.empty.hidden = items.length !== 0;
+}
+
+function updateFocusState() {
+  elements.focusButtons.forEach((button) => {
+    const isNovel = button.dataset.focus === "novel" && state.categories.has("小说");
+    const isRtl = button.dataset.focus === "rtl" && state.categories.has("RTL");
+    button.classList.toggle("is-active", isNovel || isRtl);
+    button.setAttribute("aria-pressed", String(isNovel || isRtl));
+  });
 }
 
 function resetAll() {

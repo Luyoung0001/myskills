@@ -6,7 +6,13 @@
     <title>Skill Atlas | AI Agent Skills Catalog</title>
     <meta
       name="description"
-      content="按类别、来源、适用平台和交集整理优秀 AI agent skills 的可筛选目录。"
+      content="面向小说创作与 RTL/FPGA 开发的 AI agent skills 检索台。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Noto+Serif+SC:wght@700;800;900&display=swap"
+      rel="stylesheet"
     />
     <link rel="preconnect" href="https://github.com" />
     <link rel="stylesheet" href="styles.css" />
@@ -75,13 +81,30 @@
         <section class="content">
           <header class="topbar">
             <div>
-              <p class="eyebrow">Verified June 15, 2026</p>
-              <h1 id="page-title">按类收集网络上值得用的 AI Agent Skills</h1>
+              <p class="eyebrow">Skill bench · synced June 15, 2026</p>
+              <h1 id="page-title">小说与 RTL Skill Bench</h1>
+              <p class="hero-copy">
+                一边写剧情、角色、世界观和文风修订；一边写 SystemVerilog、仿真、综合和形式验证。
+                这里把可用的 agent skills 按交集筛出来。
+              </p>
             </div>
             <a class="source-link" href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noreferrer">
-              查看主来源
+              打开来源索引
             </a>
           </header>
+
+          <section class="signal-board" aria-label="重点方向">
+            <button class="signal-lane lane-novel" type="button" data-focus="novel">
+              <span class="lane-label">Novel line</span>
+              <strong>章节、角色、世界观、风格</strong>
+              <span class="lane-trace" aria-hidden="true"></span>
+            </button>
+            <button class="signal-lane lane-rtl" type="button" data-focus="rtl">
+              <span class="lane-label">RTL line</span>
+              <strong>接口、时序、验证、综合</strong>
+              <span class="lane-trace" aria-hidden="true"></span>
+            </button>
+          </section>
 
           <section class="stats-grid" aria-label="目录概览">
             <article class="stat-card">
@@ -117,17 +140,6 @@
                 <option value="recent">近期维护</option>
               </select>
             </div>
-          </section>
-
-          <section class="focus-panel" aria-label="重点工作流">
-            <button class="focus-card" type="button" data-focus="novel">
-              <span>小说创作</span>
-              <strong>剧情、角色、世界观、章节续写、风格修订</strong>
-            </button>
-            <button class="focus-card" type="button" data-focus="rtl">
-              <span>RTL / FPGA</span>
-              <strong>SystemVerilog、验证、综合、形式验证、Xilinx 工具链</strong>
-            </button>
           </section>
 
           <section class="source-strip" aria-label="来源">
