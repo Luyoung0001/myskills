@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skill Atlas | AI Agent Skills Catalog</title>
+    <meta
+      name="description"
+      content="按类别、来源、适用平台和交集整理优秀 AI agent skills 的可筛选目录。"
+    />
+    <link rel="preconnect" href="https://github.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-labelledby="page-title">
+        <aside class="sidebar" aria-label="筛选栏">
+          <a class="brand" href="#" aria-label="Skill Atlas 首页">
+            <span class="brand-mark">SA</span>
+            <span>
+              <strong>Skill Atlas</strong>
+              <small>优秀 Agent Skills 目录</small>
+            </span>
+          </a>
+
+          <div class="filter-block">
+            <label class="search-label" for="search-input">搜索</label>
+            <div class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input
+                id="search-input"
+                type="search"
+                placeholder="名称、来源、用途、平台"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-heading">
+              <span>分类交集</span>
+              <button class="text-button" id="clear-categories" type="button">清空</button>
+            </div>
+            <div class="chip-list" id="category-filters"></div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-heading">
+              <span>平台</span>
+              <button class="text-button" id="clear-platforms" type="button">清空</button>
+            </div>
+            <div class="chip-list" id="platform-filters"></div>
+          </div>
+
+          <div class="filter-block">
+            <label class="toggle-row">
+              <input id="official-only" type="checkbox" />
+              <span>只看官方/团队维护</span>
+            </label>
+            <label class="toggle-row">
+              <input id="installable-only" type="checkbox" />
+              <span>只看有安装路径</span>
+            </label>
+          </div>
+        </aside>
+
+        <section class="content">
+          <header class="topbar">
+            <div>
+              <p class="eyebrow">Verified June 15, 2026</p>
+              <h1 id="page-title">按类收集网络上值得用的 AI Agent Skills</h1>
+            </div>
+            <a class="source-link" href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noreferrer">
+              查看主来源
+            </a>
+          </header>
+
+          <section class="stats-grid" aria-label="目录概览">
+            <article class="stat-card">
+              <img src="https://github.com/openai.png?size=96" alt="OpenAI" />
+              <span class="stat-value" id="skill-count">0</span>
+              <span class="stat-label">当前结果</span>
+            </article>
+            <article class="stat-card">
+              <img src="https://github.com/anthropics.png?size=96" alt="Anthropic" />
+              <span class="stat-value" id="source-count">0</span>
+              <span class="stat-label">来源集合</span>
+            </article>
+            <article class="stat-card">
+              <img src="https://github.com/VoltAgent.png?size=96" alt="VoltAgent" />
+              <span class="stat-value" id="category-count">0</span>
+              <span class="stat-label">分类维度</span>
+            </article>
+            <article class="stat-card">
+              <img src="https://github.com/ComposioHQ.png?size=96" alt="Composio" />
+              <span class="stat-value" id="official-count">0</span>
+              <span class="stat-label">官方/团队维护</span>
+            </article>
+          </section>
+
+          <section class="collection-tools" aria-label="排序与视图">
+            <div class="active-filter-row" id="active-filters"></div>
+            <div class="tool-actions">
+              <label class="select-label" for="sort-select">排序</label>
+              <select id="sort-select">
+                <option value="quality">推荐优先</option>
+                <option value="name">名称 A-Z</option>
+                <option value="source">来源</option>
+                <option value="recent">近期维护</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="source-strip" aria-label="来源">
+            <article>
+              <img src="https://github.com/VoltAgent.png?size=96" alt="VoltAgent" />
+              <div>
+                <strong>Awesome Agent Skills</strong>
+                <span>1424+ skills，多平台技能集合</span>
+              </div>
+            </article>
+            <article>
+              <img src="https://github.com/openai.png?size=96" alt="OpenAI" />
+              <div>
+                <strong>OpenAI Skills</strong>
+                <span>Codex curated 与 system skills</span>
+              </div>
+            </article>
+            <article>
+              <img src="https://github.com/anthropics.png?size=96" alt="Anthropic" />
+              <div>
+                <strong>Anthropic Skills</strong>
+                <span>文档、表格、前端和 MCP 技能</span>
+              </div>
+            </article>
+            <article>
+              <img src="https://github.com/ComposioHQ.png?size=96" alt="Composio" />
+              <div>
+                <strong>Awesome Codex Skills</strong>
+                <span>Codex 工作流与应用连接</span>
+              </div>
+            </article>
+          </section>
+
+          <section class="sync-panel" aria-label="远程目录同步">
+            <div>
+              <strong id="sync-status">正在同步公开技能目录</strong>
+              <span id="sync-meta">先展示精选条目，随后合并 GitHub 上的公开合集。</span>
+            </div>
+            <button class="text-button" id="sync-now" type="button">重新同步</button>
+          </section>
+
+          <section class="results-head">
+            <div>
+              <h2>技能目录</h2>
+              <p id="result-copy">选择多个分类时，将展示同时命中的技能。</p>
+            </div>
+            <button class="text-button" id="reset-all" type="button">重置筛选</button>
+          </section>
+
+          <section class="card-grid" id="skill-grid" aria-live="polite"></section>
+          <p class="empty-state" id="empty-state" hidden>没有匹配结果。减少分类交集或换一个关键词。</p>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
