@@ -164,6 +164,41 @@ const sources = {
     avatar: "https://github.com/github.png?size=96",
     url: "https://github.com/topics/ai-agent-skills",
   },
+  novelWriting: {
+    label: "Novel Writing",
+    avatar: "https://github.com/wgwtest.png?size=96",
+    url: "https://github.com/wgwtest/novel-writing",
+  },
+  storySkills: {
+    label: "Story Skills",
+    avatar: "https://github.com/danjdewhurst.png?size=96",
+    url: "https://github.com/danjdewhurst/story-skills",
+  },
+  creativeWriting: {
+    label: "Creative Writing",
+    avatar: "https://github.com/haowjy.png?size=96",
+    url: "https://github.com/haowjy/creative-writing-skills",
+  },
+  gateflow: {
+    label: "GateFlow RTL",
+    avatar: "https://github.com/codejunkie99.png?size=96",
+    url: "https://github.com/codejunkie99/Gateflow-Plugin",
+  },
+  mindrallyHardware: {
+    label: "FPGA/SystemVerilog",
+    avatar: "https://github.com/Mindrally.png?size=96",
+    url: "https://github.com/Mindrally/skills",
+  },
+  xilinxSuite: {
+    label: "Xilinx Suite",
+    avatar: "https://github.com/QingquanYao.png?size=96",
+    url: "https://github.com/QingquanYao/xilinx-skill",
+  },
+  chipforge: {
+    label: "ChipForge",
+    avatar: "https://github.com/Fzhiyu1.png?size=96",
+    url: "https://github.com/Fzhiyu1/chipforge-plugin",
+  },
 };
 
 const remoteCatalogs = [
@@ -219,6 +254,91 @@ const remoteCatalogs = [
     platforms: ["Claude", "Codex", "Cursor"],
     official: true,
     maintained: "2026-06-12",
+  },
+  {
+    type: "github-tree",
+    source: "novelWriting",
+    repo: "wgwtest/novel-writing",
+    branch: "main",
+    root: "novel-writing/",
+    namePrefix: "novel",
+    platforms: ["Codex", "Claude"],
+    official: false,
+    maintained: "2026-06-15",
+    quality: 92,
+  },
+  {
+    type: "github-tree",
+    source: "storySkills",
+    repo: "danjdewhurst/story-skills",
+    branch: "main",
+    root: "skills/",
+    namePrefix: "story",
+    platforms: ["Codex", "Claude"],
+    official: false,
+    maintained: "2026-06-15",
+    quality: 88,
+  },
+  {
+    type: "github-tree",
+    source: "creativeWriting",
+    repo: "haowjy/creative-writing-skills",
+    branch: "main",
+    root: "skills/",
+    namePrefix: "creative-writing",
+    platforms: ["Claude", "Codex"],
+    official: false,
+    maintained: "2026-06-15",
+    quality: 88,
+  },
+  {
+    type: "github-tree",
+    source: "gateflow",
+    repo: "codejunkie99/Gateflow-Plugin",
+    branch: "main",
+    root: "plugins/gateflow/skills/",
+    namePrefix: "gateflow",
+    platforms: ["Claude", "Codex"],
+    official: false,
+    maintained: "2026-06-15",
+    quality: 92,
+  },
+  {
+    type: "github-tree",
+    source: "mindrallyHardware",
+    repo: "Mindrally/skills",
+    branch: "main",
+    root: "",
+    includePaths: ["fpga/SKILL.md", "systemverilog/SKILL.md"],
+    namePrefix: "hardware",
+    platforms: ["Claude", "Codex"],
+    official: false,
+    maintained: "2026-06-15",
+    quality: 86,
+  },
+  {
+    type: "github-tree",
+    source: "xilinxSuite",
+    repo: "QingquanYao/xilinx-skill",
+    branch: "main",
+    root: "plugins/xilinx-suite/skills/",
+    namePrefix: "xilinx",
+    platforms: ["Claude", "Codex"],
+    official: false,
+    maintained: "2026-06-15",
+    quality: 86,
+  },
+  {
+    type: "github-tree",
+    source: "chipforge",
+    repo: "Fzhiyu1/chipforge-plugin",
+    branch: "main",
+    root: "skills/",
+    namePrefix: "chipforge",
+    platforms: ["Claude", "Codex"],
+    official: false,
+    maintained: "2026-06-15",
+    quality: 85,
   },
 ];
 
@@ -636,6 +756,124 @@ const seedSkills = [
     maintained: "2026-06-12",
     quality: 86,
   },
+  {
+    name: "novel/novel-writing",
+    source: "novelWriting",
+    description:
+      "长篇小说规划、章节续写、场景结构、角色引入、文风保持和现实约束审稿。",
+    categories: ["小说", "写作", "剧情", "角色", "修订"],
+    platforms: ["Codex", "Claude"],
+    url: "https://github.com/wgwtest/novel-writing/tree/main/novel-writing",
+    install:
+      "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo wgwtest/novel-writing --path novel-writing --name novel-writing",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 98,
+  },
+  {
+    name: "story/chapter-writing",
+    source: "storySkills",
+    description:
+      "按章节目标、场景节奏、冲突推进和情绪转折写作或续写小说章节。",
+    categories: ["小说", "写作", "剧情", "章节", "场景"],
+    platforms: ["Codex", "Claude"],
+    url: "https://github.com/danjdewhurst/story-skills/tree/main/skills/chapter-writing",
+    install: "",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 94,
+  },
+  {
+    name: "story/character-management",
+    source: "storySkills",
+    description:
+      "维护角色档案、关系网络、行为一致性和长篇小说中的人物连续性。",
+    categories: ["小说", "角色", "世界观", "写作", "连续性"],
+    platforms: ["Codex", "Claude"],
+    url: "https://github.com/danjdewhurst/story-skills/tree/main/skills/character-management",
+    install: "",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 92,
+  },
+  {
+    name: "creative-writing/prose-critique",
+    source: "creativeWriting",
+    description:
+      "从文风、结构、角色、连续性和常见 AI 文风问题角度批改小说段落。",
+    categories: ["小说", "修订", "写作", "风格", "审查"],
+    platforms: ["Claude", "Codex"],
+    url: "https://github.com/haowjy/creative-writing-skills/tree/main/skills/prose-critique",
+    install: "",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 92,
+  },
+  {
+    name: "gateflow/gf-plan",
+    source: "gateflow",
+    description:
+      "硬件设计规划器：在写 RTL 前明确模块层级、接口、时序、FSM、pipeline 和验证策略。",
+    categories: ["RTL", "FPGA", "Verilog", "架构", "验证"],
+    platforms: ["Claude", "Codex"],
+    url: "https://github.com/codejunkie99/Gateflow-Plugin/tree/main/plugins/gateflow/skills/gf-plan",
+    install: "",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 98,
+  },
+  {
+    name: "gateflow/gf-sim",
+    source: "gateflow",
+    description:
+      "RTL 仿真工作流，围绕 testbench、波形、失败定位和仿真迭代处理硬件问题。",
+    categories: ["RTL", "验证", "仿真", "调试", "Verilog"],
+    platforms: ["Claude", "Codex"],
+    url: "https://github.com/codejunkie99/Gateflow-Plugin/tree/main/plugins/gateflow/skills/gf-sim",
+    install: "",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 95,
+  },
+  {
+    name: "gateflow/gf-formal",
+    source: "gateflow",
+    description:
+      "形式验证技能，覆盖 SVA 属性、SymbiYosys 模板、反例分析和硬件不变量。",
+    categories: ["RTL", "形式验证", "验证", "安全", "Verilog"],
+    platforms: ["Claude", "Codex"],
+    url: "https://github.com/codejunkie99/Gateflow-Plugin/tree/main/plugins/gateflow/skills/gf-formal",
+    install: "",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 94,
+  },
+  {
+    name: "hardware/systemverilog",
+    source: "mindrallyHardware",
+    description:
+      "SystemVerilog 编码、模块接口、testbench、综合友好写法和硬件设计检查。",
+    categories: ["RTL", "SystemVerilog", "Verilog", "验证", "开发"],
+    platforms: ["Claude", "Codex"],
+    url: "https://github.com/Mindrally/skills/tree/main/systemverilog",
+    install: "",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 90,
+  },
+  {
+    name: "xilinx/xilinx-suite",
+    source: "xilinxSuite",
+    description:
+      "Xilinx Vivado、Vitis、PetaLinux、XDC 约束、MPSoC 和 HLS 工具链工作流。",
+    categories: ["FPGA", "Vivado", "综合", "部署", "RTL"],
+    platforms: ["Claude", "Codex"],
+    url: "https://github.com/QingquanYao/xilinx-skill/tree/main/plugins/xilinx-suite/skills/xilinx-suite",
+    install: "",
+    official: false,
+    maintained: "2026-06-15",
+    quality: 89,
+  },
 ];
 
 let skills = [...seedSkills];
@@ -651,6 +889,24 @@ const state = {
 };
 
 const categoryOrder = [
+  "小说",
+  "剧情",
+  "角色",
+  "世界观",
+  "章节",
+  "场景",
+  "修订",
+  "风格",
+  "连续性",
+  "RTL",
+  "FPGA",
+  "SystemVerilog",
+  "Verilog",
+  "验证",
+  "仿真",
+  "综合",
+  "形式验证",
+  "Vivado",
   "开发",
   "前端",
   "测试",
@@ -685,6 +941,13 @@ const sourceOrder = [
   "googleGemini",
   "sentry",
   "trailofbits",
+  "novelWriting",
+  "storySkills",
+  "creativeWriting",
+  "gateflow",
+  "mindrallyHardware",
+  "xilinxSuite",
+  "chipforge",
   "huggingface",
   "figma",
   "netlify",
@@ -713,9 +976,28 @@ const elements = {
   syncStatus: document.querySelector("#sync-status"),
   syncMeta: document.querySelector("#sync-meta"),
   syncNow: document.querySelector("#sync-now"),
+  focusButtons: document.querySelectorAll("[data-focus]"),
 };
 
 const categoryRules = [
+  ["小说", /novel|fiction|story|creative writing|prose|narrative|chapter|scene|character|worldbuilding|小说|故事|创作/i],
+  ["剧情", /plot|arc|structure|beat|conflict|reveal|promise|question|剧情|情节|主线|伏笔/i],
+  ["角色", /character|relationship|persona|dialogue|motivation|人物|角色|对话/i],
+  ["世界观", /worldbuilding|setting|location|faction|lore|artifact|世界观|设定|地点|阵营/i],
+  ["章节", /chapter|章节/i],
+  ["场景", /scene|场景/i],
+  ["修订", /revision|critique|rewrite|continuity|review|revise|修订|润色|改写|审稿/i],
+  ["风格", /style|voice|prose|tone|文风|风格|语气/i],
+  ["连续性", /continuity|timeline|canon|一致性|连续性|时间线/i],
+  ["RTL", /rtl|hardware|gateflow|chipforge|register transfer|硬件/i],
+  ["FPGA", /fpga|xilinx|vivado|vitis|petalinux|xdc|fusesoc|pnr|board/i],
+  ["SystemVerilog", /systemverilog|system verilog|sv\b|sva/i],
+  ["Verilog", /verilog|hdl|rtl/i],
+  ["验证", /verification|testbench|cocotb|simulate|simulation|assertion|验证|测试平台/i],
+  ["仿真", /simulation|simulate|waveform|iverilog|verilator|仿真|波形/i],
+  ["综合", /synthesis|synth|pnr|place|route|timing closure|综合|时序/i],
+  ["形式验证", /formal|sby|symbiyosys|property|assertion|sva|形式验证/i],
+  ["Vivado", /vivado|vitis|petalinux|xilinx|xdc/i],
   ["安全", /security|threat|vulnerab|owasp|audit|auth|secret|权限|安全/i],
   ["测试", /test|testing|playwright|ci|qa|acceptance|验证|测试/i],
   ["前端", /frontend|react|angular|vue|ui|ux|next\.js|web app|design system|前端|界面/i],
@@ -765,6 +1047,13 @@ const sourceRules = [
   ["mongodb", /mongodb/i],
   ["redis", /redis/i],
   ["nvidia", /nvidia/i],
+  ["novelWriting", /novel-writing|novel writing|wgwtest/i],
+  ["storySkills", /story-skills|danjdewhurst|story\//i],
+  ["creativeWriting", /creative-writing|haowjy|prose|fiction/i],
+  ["gateflow", /gateflow|gf-|codejunkie99/i],
+  ["mindrallyHardware", /mindrally|systemverilog|fpga/i],
+  ["xilinxSuite", /xilinx|vivado|vitis|petalinux|QingquanYao/i],
+  ["chipforge", /chipforge|Fzhiyu1/i],
   ["voltagent", /voltagent/i],
   ["composio", /composio/i],
 ];
@@ -1056,6 +1345,7 @@ async function parseGitHubTreeCatalog(catalog) {
     .map((entry) => entry.path)
     .filter((path) => path.endsWith("/SKILL.md"))
     .filter((path) => (catalog.root ? path.startsWith(catalog.root) : true))
+    .filter((path) => (catalog.includePaths ? catalog.includePaths.includes(path) : true))
     .slice(0, catalog.limit ?? 80);
 
   const settled = await Promise.allSettled(
@@ -1211,6 +1501,25 @@ function resetAll() {
   render();
 }
 
+function focusWorkflow(kind) {
+  state.query = "";
+  state.categories.clear();
+  state.platforms.clear();
+  state.sources.clear();
+  state.officialOnly = false;
+  state.installableOnly = false;
+  state.sort = "quality";
+
+  if (kind === "novel") state.categories.add("小说");
+  if (kind === "rtl") state.categories.add("RTL");
+
+  elements.search.value = "";
+  elements.officialOnly.checked = false;
+  elements.installableOnly.checked = false;
+  elements.sort.value = "quality";
+  render();
+}
+
 elements.search.addEventListener("input", (event) => {
   state.query = event.target.value;
   render();
@@ -1248,6 +1557,9 @@ elements.clearSources.addEventListener("click", () => {
 
 elements.resetAll.addEventListener("click", resetAll);
 elements.syncNow.addEventListener("click", syncCatalogs);
+elements.focusButtons.forEach((button) => {
+  button.addEventListener("click", () => focusWorkflow(button.dataset.focus));
+});
 
 render();
 syncCatalogs();

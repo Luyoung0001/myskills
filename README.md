@@ -11,8 +11,20 @@
 - OpenAI `skills` 仓库里的 `SKILL.md`
 - Anthropic `skills` 仓库里的 `SKILL.md`
 - Angular `skills` 仓库里的 `SKILL.md`
+- wgwtest Novel Writing
+- danjdewhurst Story Skills
+- haowjy Creative Writing Skills
+- GateFlow RTL/FPGA skills
+- Mindrally FPGA/SystemVerilog skills
+- Xilinx Suite skill
+- ChipForge
 
 VoltAgent 目录还覆盖 Stripe、Supabase、Cloudflare、Vercel、Google Gemini、Sentry、Trail of Bits、Hugging Face、Figma、Netlify 等更多团队来源。
+
+页面顶部有两个重点工作流快捷筛选：
+
+- 小说创作：剧情、角色、世界观、章节续写、风格修订
+- RTL / FPGA：SystemVerilog、验证、综合、形式验证、Xilinx 工具链
 
 ## 本地运行
 
