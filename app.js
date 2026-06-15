@@ -49,20 +49,176 @@ const sources = {
     avatar: "https://github.com/trailofbits.png?size=96",
     url: "https://officialskills.sh/trailofbits",
   },
+  supabase: {
+    label: "Supabase",
+    avatar: "https://github.com/supabase.png?size=96",
+    url: "https://officialskills.sh/supabase",
+  },
+  googleGemini: {
+    label: "Google Gemini",
+    avatar: "https://github.com/google.png?size=96",
+    url: "https://officialskills.sh/google-gemini",
+  },
+  callstack: {
+    label: "CallStack",
+    avatar: "https://github.com/callstackincubator.png?size=96",
+    url: "https://officialskills.sh/callstackincubator",
+  },
+  betterAuth: {
+    label: "Better Auth",
+    avatar: "https://github.com/better-auth.png?size=96",
+    url: "https://officialskills.sh/better-auth",
+  },
+  tinybird: {
+    label: "Tinybird",
+    avatar: "https://github.com/tinybirdco.png?size=96",
+    url: "https://officialskills.sh/tinybirdco",
+  },
+  hashicorp: {
+    label: "HashiCorp",
+    avatar: "https://github.com/hashicorp.png?size=96",
+    url: "https://officialskills.sh/hashicorp",
+  },
+  sanity: {
+    label: "Sanity",
+    avatar: "https://github.com/sanity-io.png?size=96",
+    url: "https://officialskills.sh/sanity-io",
+  },
+  firecrawl: {
+    label: "Firecrawl",
+    avatar: "https://github.com/firecrawl.png?size=96",
+    url: "https://officialskills.sh/firecrawl",
+  },
+  neon: {
+    label: "Neon",
+    avatar: "https://github.com/neondatabase.png?size=96",
+    url: "https://officialskills.sh/neondatabase",
+  },
+  clickhouse: {
+    label: "ClickHouse",
+    avatar: "https://github.com/clickhouse.png?size=96",
+    url: "https://officialskills.sh/clickhouse",
+  },
+  remotion: {
+    label: "Remotion",
+    avatar: "https://github.com/remotion-dev.png?size=96",
+    url: "https://officialskills.sh/remotion-dev",
+  },
+  replicate: {
+    label: "Replicate",
+    avatar: "https://github.com/replicate.png?size=96",
+    url: "https://officialskills.sh/replicate",
+  },
+  typefully: {
+    label: "Typefully",
+    avatar: "https://github.com/typefully.png?size=96",
+    url: "https://officialskills.sh/typefully",
+  },
+  netlify: {
+    label: "Netlify",
+    avatar: "https://github.com/netlify.png?size=96",
+    url: "https://officialskills.sh/netlify",
+  },
+  huggingface: {
+    label: "Hugging Face",
+    avatar: "https://github.com/huggingface.png?size=96",
+    url: "https://officialskills.sh/huggingface",
+  },
+  figma: {
+    label: "Figma",
+    avatar: "https://github.com/figma.png?size=96",
+    url: "https://officialskills.sh/figma",
+  },
+  microsoft: {
+    label: "Microsoft",
+    avatar: "https://github.com/microsoft.png?size=96",
+    url: "https://officialskills.sh/microsoft",
+  },
+  firebase: {
+    label: "Firebase",
+    avatar: "https://github.com/firebase.png?size=96",
+    url: "https://officialskills.sh/firebase",
+  },
+  flutter: {
+    label: "Flutter",
+    avatar: "https://github.com/flutter.png?size=96",
+    url: "https://officialskills.sh/flutter",
+  },
+  mongodb: {
+    label: "MongoDB",
+    avatar: "https://github.com/mongodb.png?size=96",
+    url: "https://officialskills.sh/mongodb",
+  },
+  redis: {
+    label: "Redis",
+    avatar: "https://github.com/redis.png?size=96",
+    url: "https://officialskills.sh/redis",
+  },
+  nvidia: {
+    label: "NVIDIA",
+    avatar: "https://github.com/nvidia.png?size=96",
+    url: "https://officialskills.sh/nvidia",
+  },
+  community: {
+    label: "Community",
+    avatar: "https://github.com/github.png?size=96",
+    url: "https://github.com/topics/ai-agent-skills",
+  },
 };
 
 const remoteCatalogs = [
   {
+    type: "markdown",
     source: "voltagent",
     url: "https://raw.githubusercontent.com/VoltAgent/awesome-agent-skills/main/README.md",
+    homeUrl: "https://github.com/VoltAgent/awesome-agent-skills",
     platforms: ["Claude", "Codex", "Cursor", "Gemini CLI"],
     official: true,
+    maintained: "2026-06-12",
   },
   {
+    type: "markdown",
     source: "composio",
     url: "https://raw.githubusercontent.com/ComposioHQ/awesome-codex-skills/master/README.md",
+    homeUrl: "https://github.com/ComposioHQ/awesome-codex-skills",
     platforms: ["Codex"],
     official: false,
+    maintained: "2026-05-15",
+  },
+  {
+    type: "github-tree",
+    source: "openai",
+    repo: "openai/skills",
+    branch: "main",
+    root: "skills/",
+    namePrefix: "openai",
+    platforms: ["Codex"],
+    official: true,
+    maintained: "2026-05-29",
+    installTemplate:
+      "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo {repo} --path {path} --name {name}",
+  },
+  {
+    type: "github-tree",
+    source: "anthropic",
+    repo: "anthropics/skills",
+    branch: "main",
+    root: "skills/",
+    namePrefix: "anthropics",
+    platforms: ["Claude", "Codex"],
+    official: true,
+    maintained: "2026-06-09",
+  },
+  {
+    type: "github-tree",
+    source: "angular",
+    repo: "angular/skills",
+    branch: "main",
+    root: "",
+    namePrefix: "angular",
+    platforms: ["Claude", "Codex", "Cursor"],
+    official: true,
+    maintained: "2026-06-12",
   },
 ];
 
@@ -376,6 +532,110 @@ const seedSkills = [
     maintained: "2026-05-15",
     quality: 86,
   },
+  {
+    name: "supabase/postgres-best-practices",
+    source: "supabase",
+    description:
+      "Supabase 场景下的 PostgreSQL schema、RLS、索引、迁移和查询实践。",
+    categories: ["数据", "开发", "安全", "后端"],
+    platforms: ["Claude", "Codex", "Cursor"],
+    url: "https://officialskills.sh/supabase/skills/postgres-best-practices",
+    install: "",
+    official: true,
+    maintained: "2026-06-12",
+    quality: 91,
+  },
+  {
+    name: "google-gemini/gemini-api-dev",
+    source: "googleGemini",
+    description:
+      "使用 Gemini API 构建应用的模型选择、流式输出、工具调用和多模态开发实践。",
+    categories: ["模型/API", "开发", "集成", "智能体框架"],
+    platforms: ["Claude", "Codex", "Cursor", "Gemini CLI"],
+    url: "https://officialskills.sh/google-gemini/skills/gemini-api-dev",
+    install: "",
+    official: true,
+    maintained: "2026-06-12",
+    quality: 90,
+  },
+  {
+    name: "hashicorp/terraform-style-guide",
+    source: "hashicorp",
+    description:
+      "按照 HashiCorp 官方风格生成 Terraform HCL，并处理模块、provider 和测试结构。",
+    categories: ["开发", "部署", "云服务", "架构"],
+    platforms: ["Claude", "Codex", "Cursor"],
+    url: "https://officialskills.sh/hashicorp/skills/terraform-style-guide",
+    install: "",
+    official: true,
+    maintained: "2026-06-12",
+    quality: 89,
+  },
+  {
+    name: "clickhouse/clickhouse-best-practices",
+    source: "clickhouse",
+    description:
+      "ClickHouse 表设计、查询优化、数据导入、云部署和分析架构最佳实践。",
+    categories: ["数据", "分析", "开发", "云服务"],
+    platforms: ["Claude", "Codex", "Cursor"],
+    url: "https://officialskills.sh/clickhouse/skills/clickhouse-best-practices",
+    install: "",
+    official: true,
+    maintained: "2026-06-12",
+    quality: 88,
+  },
+  {
+    name: "firecrawl/firecrawl-build",
+    source: "firecrawl",
+    description:
+      "把 Firecrawl 的搜索、抓取、抽取和浏览器交互能力接入产品代码。",
+    categories: ["集成", "浏览器", "开发", "自动化"],
+    platforms: ["Claude", "Codex", "Cursor"],
+    url: "https://officialskills.sh/firecrawl/skills/firecrawl-build",
+    install: "",
+    official: true,
+    maintained: "2026-06-12",
+    quality: 88,
+  },
+  {
+    name: "huggingface/hub-and-transformers",
+    source: "huggingface",
+    description:
+      "围绕 Hugging Face Hub、Transformers、模型下载、推理和机器学习工作流的技能入口。",
+    categories: ["模型/API", "数据", "开发", "研究"],
+    platforms: ["Claude", "Codex", "Cursor"],
+    url: "https://officialskills.sh/huggingface",
+    install: "",
+    official: true,
+    maintained: "2026-06-12",
+    quality: 87,
+  },
+  {
+    name: "figma/figma-design-to-code",
+    source: "figma",
+    description:
+      "围绕 Figma 文件、组件、设计系统和设计到代码交付的官方技能集合入口。",
+    categories: ["设计", "前端", "Figma", "开发"],
+    platforms: ["Claude", "Codex", "Cursor"],
+    url: "https://officialskills.sh/figma",
+    install: "",
+    official: true,
+    maintained: "2026-06-12",
+    quality: 87,
+  },
+  {
+    name: "netlify/netlify-deploy",
+    source: "netlify",
+    description:
+      "面向 Netlify 的静态站点、函数、预览环境和部署配置工作流。",
+    categories: ["部署", "前端", "云服务", "开发"],
+    platforms: ["Claude", "Codex", "Cursor"],
+    url: "https://officialskills.sh/netlify",
+    install: "",
+    official: true,
+    maintained: "2026-06-12",
+    quality: 86,
+  },
 ];
 
 let skills = [...seedSkills];
@@ -384,6 +644,7 @@ const state = {
   query: "",
   categories: new Set(),
   platforms: new Set(),
+  sources: new Set(),
   officialOnly: false,
   installableOnly: false,
   sort: "quality",
@@ -411,10 +672,29 @@ const categoryOrder = [
 
 const platformOrder = ["Codex", "Claude", "Cursor", "Gemini CLI"];
 
+const sourceOrder = [
+  "openai",
+  "anthropic",
+  "voltagent",
+  "composio",
+  "angular",
+  "stripe",
+  "supabase",
+  "cloudflare",
+  "vercel",
+  "googleGemini",
+  "sentry",
+  "trailofbits",
+  "huggingface",
+  "figma",
+  "netlify",
+];
+
 const elements = {
   search: document.querySelector("#search-input"),
   categoryFilters: document.querySelector("#category-filters"),
   platformFilters: document.querySelector("#platform-filters"),
+  sourceFilters: document.querySelector("#source-filters"),
   officialOnly: document.querySelector("#official-only"),
   installableOnly: document.querySelector("#installable-only"),
   sort: document.querySelector("#sort-select"),
@@ -428,6 +708,7 @@ const elements = {
   resultCopy: document.querySelector("#result-copy"),
   clearCategories: document.querySelector("#clear-categories"),
   clearPlatforms: document.querySelector("#clear-platforms"),
+  clearSources: document.querySelector("#clear-sources"),
   resetAll: document.querySelector("#reset-all"),
   syncStatus: document.querySelector("#sync-status"),
   syncMeta: document.querySelector("#sync-meta"),
@@ -458,10 +739,32 @@ const sourceRules = [
   ["anthropic", /anthropic|claude/i],
   ["angular", /angular/i],
   ["stripe", /stripe/i],
+  ["supabase", /supabase/i],
+  ["googleGemini", /google[-\s]?gemini|gemini|vertex/i],
   ["cloudflare", /cloudflare/i],
   ["vercel", /vercel/i],
   ["sentry", /sentry/i],
   ["trailofbits", /trail of bits|trailofbits/i],
+  ["callstack", /callstack/i],
+  ["betterAuth", /better[-\s]?auth/i],
+  ["tinybird", /tinybird/i],
+  ["hashicorp", /hashicorp|terraform/i],
+  ["sanity", /sanity/i],
+  ["firecrawl", /firecrawl/i],
+  ["neon", /neon|neondatabase/i],
+  ["clickhouse", /clickhouse|chdb/i],
+  ["remotion", /remotion/i],
+  ["replicate", /replicate/i],
+  ["typefully", /typefully/i],
+  ["netlify", /netlify/i],
+  ["huggingface", /hugging\s?face|huggingface/i],
+  ["figma", /figma/i],
+  ["microsoft", /microsoft/i],
+  ["firebase", /firebase/i],
+  ["flutter", /flutter/i],
+  ["mongodb", /mongodb/i],
+  ["redis", /redis/i],
+  ["nvidia", /nvidia/i],
   ["voltagent", /voltagent/i],
   ["composio", /composio/i],
 ];
@@ -486,15 +789,29 @@ function allPlatforms() {
   return uniqueSorted(skills.flatMap((skill) => skill.platforms), platformOrder);
 }
 
+function allSourceIds() {
+  const ids = new Set(skills.map((skill) => skill.source).filter((source) => sources[source]));
+  return [...ids].sort((a, b) => {
+    const aIndex = sourceOrder.indexOf(a);
+    const bIndex = sourceOrder.indexOf(b);
+    if (aIndex >= 0 || bIndex >= 0) {
+      return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+    }
+    return sources[a].label.localeCompare(sources[b].label);
+  });
+}
+
 function buildChips(container, values, selectedSet, onClick) {
   container.innerHTML = "";
   values.forEach((value) => {
+    const id = typeof value === "string" ? value : value.id;
+    const label = typeof value === "string" ? value : value.label;
     const button = document.createElement("button");
     button.type = "button";
-    button.className = `chip${selectedSet.has(value) ? " is-active" : ""}`;
-    button.textContent = value;
-    button.setAttribute("aria-pressed", String(selectedSet.has(value)));
-    button.addEventListener("click", () => onClick(value));
+    button.className = `chip${selectedSet.has(id) ? " is-active" : ""}`;
+    button.textContent = label;
+    button.setAttribute("aria-pressed", String(selectedSet.has(id)));
+    button.addEventListener("click", () => onClick(id));
     container.appendChild(button);
   });
 }
@@ -519,11 +836,17 @@ function matchesIntersection(skill, selectedSet, key) {
   return [...selectedSet].every((value) => skill[key].includes(value));
 }
 
+function matchesSource(skill) {
+  if (state.sources.size === 0) return true;
+  return state.sources.has(skill.source);
+}
+
 function filteredSkills() {
   const filtered = skills.filter((skill) => {
     if (!matchesQuery(skill)) return false;
     if (!matchesIntersection(skill, state.categories, "categories")) return false;
     if (!matchesIntersection(skill, state.platforms, "platforms")) return false;
+    if (!matchesSource(skill)) return false;
     if (state.officialOnly && !skill.official) return false;
     if (state.installableOnly && !skill.install) return false;
     return true;
@@ -544,6 +867,7 @@ function renderActiveFilters() {
   const filters = [
     ...[...state.categories].map((value) => ({ value, type: "分类" })),
     ...[...state.platforms].map((value) => ({ value, type: "平台" })),
+    ...[...state.sources].map((value) => ({ value: sources[value]?.label ?? value, type: "来源" })),
   ];
 
   if (state.query) filters.push({ value: state.query, type: "搜索" });
@@ -646,10 +970,7 @@ function normalizeUrl(url, baseUrl) {
 
 function parseMarkdownCatalog(markdown, catalog) {
   let section = "";
-  const baseUrl =
-    catalog.source === "composio"
-      ? "https://github.com/ComposioHQ/awesome-codex-skills"
-      : "https://github.com/VoltAgent/awesome-agent-skills";
+  const baseUrl = catalog.homeUrl ?? "";
 
   return markdown
     .split("\n")
@@ -686,7 +1007,7 @@ function parseMarkdownCatalog(markdown, catalog) {
         url,
         install,
         official: catalog.official || source !== "composio",
-        maintained: catalog.source === "voltagent" ? "2026-06-12" : "2026-05-15",
+        maintained: catalog.maintained,
         quality: source === catalog.source ? 72 : 78,
         remote: true,
       };
@@ -694,24 +1015,117 @@ function parseMarkdownCatalog(markdown, catalog) {
     .filter(Boolean);
 }
 
+function parseFrontmatter(markdown) {
+  const match = markdown.match(/^---\s*\n([\s\S]*?)\n---\s*/);
+  if (!match) return {};
+
+  return match[1].split("\n").reduce((meta, line) => {
+    const field = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+    if (!field) return meta;
+
+    const [, key, rawValue] = field;
+    meta[key] = rawValue.trim().replace(/^["']|["']$/g, "");
+    return meta;
+  }, {});
+}
+
+function pathToSkillName(path) {
+  const parts = path.split("/").filter(Boolean);
+  const skillDir = parts.at(-2) ?? parts.at(0) ?? path;
+  return skillDir.replace(/^\.curated\//, "").replace(/^\.system\//, "");
+}
+
+function githubTreeUrl(catalog) {
+  return `https://api.github.com/repos/${catalog.repo}/git/trees/${catalog.branch}?recursive=1`;
+}
+
+function githubRawUrl(catalog, path) {
+  return `https://raw.githubusercontent.com/${catalog.repo}/${catalog.branch}/${path}`;
+}
+
+function githubHtmlUrl(catalog, path) {
+  return `https://github.com/${catalog.repo}/tree/${catalog.branch}/${path.replace(/\/SKILL\.md$/, "")}`;
+}
+
+async function parseGitHubTreeCatalog(catalog) {
+  const treeResponse = await fetch(githubTreeUrl(catalog));
+  if (!treeResponse.ok) throw new Error(`${catalog.source}: ${treeResponse.status}`);
+
+  const payload = await treeResponse.json();
+  const paths = (payload.tree ?? [])
+    .map((entry) => entry.path)
+    .filter((path) => path.endsWith("/SKILL.md"))
+    .filter((path) => (catalog.root ? path.startsWith(catalog.root) : true))
+    .slice(0, catalog.limit ?? 80);
+
+  const settled = await Promise.allSettled(
+    paths.map(async (path) => {
+      const response = await fetch(githubRawUrl(catalog, path));
+      if (!response.ok) throw new Error(`${path}: ${response.status}`);
+      const markdown = await response.text();
+      const meta = parseFrontmatter(markdown);
+      const inferredName = pathToSkillName(path);
+      const namePrefix = catalog.namePrefix ?? catalog.repo.split("/")[0].toLowerCase();
+      const name = meta.name ? `${namePrefix}/${meta.name}` : `${namePrefix}/${inferredName}`;
+      const description = meta.description || `Skill instructions from ${sources[catalog.source].label}.`;
+
+      return {
+        name,
+        source: catalog.source,
+        description,
+        categories: inferCategories(name, description, path),
+        platforms: catalog.platforms,
+        url: githubHtmlUrl(catalog, path),
+        install: catalog.installTemplate
+          ? catalog.installTemplate.replace("{repo}", catalog.repo).replace("{path}", path.replace(/\/SKILL\.md$/, "")).replace("{name}", inferredName)
+          : "",
+        official: catalog.official,
+        maintained: catalog.maintained,
+        quality: catalog.quality ?? 86,
+        remote: true,
+      };
+    }),
+  );
+
+  return settled.filter((result) => result.status === "fulfilled").map((result) => result.value);
+}
+
 function mergeSkills(remoteSkills) {
-  const byName = new Map(skills.map((skill) => [skill.name.toLowerCase(), skill]));
+  const normalizeUrlKey = (skill) =>
+    skill.url
+      .toLowerCase()
+      .replace(/\/blob\//, "/tree/")
+      .replace(/\/skill\.md$/, "")
+      .replace(/\/$/, "");
+
+  const merged = [...skills];
+  const byName = new Set(skills.map((skill) => `${skill.source}:${skill.name.toLowerCase()}`));
+  const byUrl = new Set(skills.map((skill) => `${skill.source}:${normalizeUrlKey(skill)}`));
+
   remoteSkills.forEach((skill) => {
-    const key = skill.name.toLowerCase();
-    if (byName.has(key)) return;
-    byName.set(key, skill);
+    const nameKey = `${skill.source}:${skill.name.toLowerCase()}`;
+    if (byName.has(nameKey)) return;
+
+    const urlKey = `${skill.source}:${normalizeUrlKey(skill)}`;
+    if (byUrl.has(urlKey)) return;
+
+    merged.push(skill);
+    byName.add(nameKey);
+    byUrl.add(urlKey);
   });
-  skills = [...byName.values()];
+  skills = merged;
 }
 
 async function syncCatalogs() {
   elements.syncNow.disabled = true;
   elements.syncStatus.textContent = "正在同步公开技能目录";
-  elements.syncMeta.textContent = "正在读取 GitHub raw README 并合并可解析条目。";
+  elements.syncMeta.textContent = "正在读取 README 目录、GitHub tree 和 SKILL.md 元数据。";
 
   try {
     const settled = await Promise.allSettled(
       remoteCatalogs.map(async (catalog) => {
+        if (catalog.type === "github-tree") return parseGitHubTreeCatalog(catalog);
+
         const response = await fetch(catalog.url);
         if (!response.ok) throw new Error(`${catalog.source}: ${response.status}`);
         const markdown = await response.text();
@@ -765,6 +1179,16 @@ function render() {
     render();
   });
 
+  buildChips(
+    elements.sourceFilters,
+    allSourceIds().map((source) => ({ id: source, label: sources[source].label })),
+    state.sources,
+    (value) => {
+      state.sources.has(value) ? state.sources.delete(value) : state.sources.add(value);
+      render();
+    },
+  );
+
   const items = filteredSkills();
   renderActiveFilters();
   renderCards(items);
@@ -776,6 +1200,7 @@ function resetAll() {
   state.query = "";
   state.categories.clear();
   state.platforms.clear();
+  state.sources.clear();
   state.officialOnly = false;
   state.installableOnly = false;
   state.sort = "quality";
@@ -813,6 +1238,11 @@ elements.clearCategories.addEventListener("click", () => {
 
 elements.clearPlatforms.addEventListener("click", () => {
   state.platforms.clear();
+  render();
+});
+
+elements.clearSources.addEventListener("click", () => {
+  state.sources.clear();
   render();
 });
 

@@ -52,6 +52,14 @@
             <div class="chip-list" id="platform-filters"></div>
           </div>
 
+          <div class="filter-block source-filter-block">
+            <div class="filter-heading">
+              <span>来源</span>
+              <button class="text-button" id="clear-sources" type="button">清空</button>
+            </div>
+            <div class="chip-list" id="source-filters"></div>
+          </div>
+
           <div class="filter-block">
             <label class="toggle-row">
               <input id="official-only" type="checkbox" />
@@ -140,12 +148,26 @@
                 <span>Codex 工作流与应用连接</span>
               </div>
             </article>
+            <article>
+              <img src="https://github.com/supabase.png?size=96" alt="Supabase" />
+              <div>
+                <strong>Stripe / Supabase / Vercel</strong>
+                <span>支付、数据库、部署等官方技能</span>
+              </div>
+            </article>
+            <article>
+              <img src="https://github.com/figma.png?size=96" alt="Figma" />
+              <div>
+                <strong>更多官方团队</strong>
+                <span>Figma、Hugging Face、Netlify 等</span>
+              </div>
+            </article>
           </section>
 
           <section class="sync-panel" aria-label="远程目录同步">
             <div>
               <strong id="sync-status">正在同步公开技能目录</strong>
-              <span id="sync-meta">先展示精选条目，随后合并 GitHub 上的公开合集。</span>
+              <span id="sync-meta">先展示精选条目，随后合并 README 目录和 GitHub SKILL.md 仓库。</span>
             </div>
             <button class="text-button" id="sync-now" type="button">重新同步</button>
           </section>
